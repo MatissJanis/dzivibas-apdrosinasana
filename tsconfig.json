@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "outDir": "out",
+    "rootDirs": [
+      "./src"
+    ],
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": [
+    "node_modules",
+    "es",
+    "lib"
+  ]
+}

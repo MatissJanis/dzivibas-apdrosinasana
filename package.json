@@ -1,0 +1,17 @@
+{
+  "name": "dzivibas-apdrosinasana",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --outDir dist",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean"
+  },
+  "author": "Matiss Janis Aboltins",
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "typescript": "^2.2.2"
+  }
+}
