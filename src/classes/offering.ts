@@ -24,7 +24,7 @@ export class Offering {
 
     monthlyPayment -= this.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
 
-    for (var i = 0; i < cycles; ++i) {
+    for (let i = 0; i < cycles; ++i) {
       savings += monthlyPayment;
       savings -= this.calcTotalCommissionByType(savings, MonthlyCommission);
       savings += savings * this.options.interest / 100;

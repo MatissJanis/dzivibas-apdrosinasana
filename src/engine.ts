@@ -1,4 +1,5 @@
 import { offerings } from './offerings';
+
 import {
   InvestBigAtPeriodEndStrategy,
   InvestBigAtPeriodStartStrategy,
@@ -13,11 +14,11 @@ import { Customer } from './classes/customer';
 export class Engine {
 
   constructor(
-    protected customer: Customer
+    protected customer: Customer,
   ) {
   }
 
-  run() {
+  public run() {
     console.log('Yearly investment:', (this.customer.maxYearlyInvestment() / 100).toFixed(2), 'EUR');
     console.log('-------------');
 
@@ -25,7 +26,7 @@ export class Engine {
     console.log('[balance at end of 5 year period]: [strategy name]');
     console.log('-------------');
 
-    for (var i = offerings.length - 1; i >= 0; i--) {
+    for (let i = offerings.length - 1; i >= 0; i--) {
       const offering = offerings[i];
       const strategies = [
         new InvestEvenlyStrategy(this.customer, offering),
@@ -38,7 +39,7 @@ export class Engine {
 
       console.log(offering.name);
 
-      for (var j = strategies.length - 1; j >= 0; j--) {
+      for (let j = strategies.length - 1; j >= 0; j--) {
         const strategy = strategies[j];
         const result = strategy.getIncome() / 100;
         console.log(result.toFixed(2), 'EUR:', strategy.constructor.name);

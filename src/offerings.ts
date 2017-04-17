@@ -66,7 +66,6 @@ export const sebFonds = new Offering('SEB: ieguldījums fondos', {
   new MonthlyCommission((savings) => savings * 0.0075),
 ]);
 
-
 export const ergo = new Offering('ERGO', {
   interest: 0,
   withdrawalPenalty: 0, // @todo: ???
@@ -75,7 +74,6 @@ export const ergo = new Offering('ERGO', {
   new InvestmentCommission((investment) => investment * 0.03),
   new MonthlyCommission((savings) => savings * 0.024 + 2),
 ]);
-
 
 export const offerings = [
   swedbankConservative,

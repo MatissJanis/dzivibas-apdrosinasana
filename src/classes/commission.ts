@@ -12,4 +12,3 @@ class Commission implements ICommission {
 export class ContractCommission extends Commission {}
 export class InvestmentCommission extends Commission {}
 export class MonthlyCommission extends Commission {}
-
