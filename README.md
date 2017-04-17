@@ -43,51 +43,51 @@ node dist/index.js
 
 ## Apdrošinātāji un to piedāvājjumi
 ### Swedbank: konservatīvā stratēģija
-Vidējais uzkrājuma pieaugums gadā: 0.4%
-Minimālā ikmēneša iemaksa: 40 EUR
-Iemaksu komisija: 1.5%
-Ikmēneša administrēšanas komisija: 0.75% (min. 2.13 EUR)
+- Vidējais uzkrājuma pieaugums gadā: 0.4%
+- Minimālā ikmēneša iemaksa: 40 EUR
+- Iemaksu komisija: 1.5%
+- Ikmēneša administrēšanas komisija: 0.75% (min. 2.13 EUR)
 
 ### Swedbank: reālās vērtības stratēģija
-Vidējais uzkrājuma pieaugums gadā: 3.8%
-Minimālā ikmēneša iemaksa: 40 EUR
-Iemaksu komisija: 1.5%
-Ikmēneša administrēšanas komisija: 1% (min. 2.13 EUR)
+- Vidējais uzkrājuma pieaugums gadā: 3.8%
+- Minimālā ikmēneša iemaksa: 40 EUR
+- Iemaksu komisija: 1.5%
+- Ikmēneša administrēšanas komisija: 1% (min. 2.13 EUR)
 
 ### Swedbank: sabalansētā stratēģija
-Vidējais uzkrājuma pieaugums gadā: 5.7%
-Minimālā ikmēneša iemaksa: 40 EUR
-Iemaksu komisija: 1.5%
-Ikmēneša administrēšanas komisija: 1% (min. 2.13 EUR)
+- Vidējais uzkrājuma pieaugums gadā: 5.7%
+- Minimālā ikmēneša iemaksa: 40 EUR
+- Iemaksu komisija: 1.5%
+- Ikmēneša administrēšanas komisija: 1% (min. 2.13 EUR)
 
 ### Swedbank: pieauguma stratēģija
-Vidējais uzkrājuma pieaugums gadā: 7.1%
-Minimālā ikmēneša iemaksa: 40 EUR
-Iemaksu komisija: 1.5%
-Ikmēneša administrēšanas komisija: 1.25% (min. 2.13 EUR)
+- Vidējais uzkrājuma pieaugums gadā: 7.1%
+- Minimālā ikmēneša iemaksa: 40 EUR
+- Iemaksu komisija: 1.5%
+- Ikmēneša administrēšanas komisija: 1.25% (min. 2.13 EUR)
 
 ### Swedbank: aktīvā pieauguma stratēģija
-Vidējais uzkrājuma pieaugums gadā: 7.4%
-Minimālā ikmēneša iemaksa: 40 EUR
-Iemaksu komisija: 1.5%
-Ikmēneša administrēšanas komisija: 1.25% (min. 2.13 EUR)
+- Vidējais uzkrājuma pieaugums gadā: 7.4%
+- Minimālā ikmēneša iemaksa: 40 EUR
+- Iemaksu komisija: 1.5%
+- Ikmēneša administrēšanas komisija: 1.25% (min. 2.13 EUR)
 
 ### SEB: garantētā pieauguma stratēģija
-Garantētais uzkrājuma pieaugums gadā: 0.6%
-Minimālā ikmēneša iemaksa: 25 EUR
-Līguma noslēgšanas komisija: 21.34 EUR
-Iemaksu komisija: 3%
-Ikmēneša administrēšanas komisija: 0.95%
+- Garantētais uzkrājuma pieaugums gadā: 0.6%
+- Minimālā ikmēneša iemaksa: 25 EUR
+- Līguma noslēgšanas komisija: 21.34 EUR
+- Iemaksu komisija: 3%
+- Ikmēneša administrēšanas komisija: 0.95%
 
 ### SEB: ieguldījums fondos
-Vidējais uzkrājuma pieaugums gadā: 3.9%
-Minimālā ikmēneša iemaksa: 25 EUR
-Līguma noslēgšanas komisija: 21.34 EUR
-Iemaksu komisija: 3%
-Ikmēneša administrēšanas komisija: 0.75%
+- Vidējais uzkrājuma pieaugums gadā: 3.9%
+- Minimālā ikmēneša iemaksa: 25 EUR
+- Līguma noslēgšanas komisija: 21.34 EUR
+- Iemaksu komisija: 3%
+- Ikmēneša administrēšanas komisija: 0.75%
 
 ### ERGO
-Vidējais uzkrājuma pieaugums gadā: 0%
-Minimālā ikmēneša iemaksa: 15 EUR
-Iemaksu komisija: 3%
-Ikmēneša administrēšanas komisija: 2.4% + 2 EUR
+- Vidējais uzkrājuma pieaugums gadā: 0%
+- Minimālā ikmēneša iemaksa: 15 EUR
+- Iemaksu komisija: 3%
+- Ikmēneša administrēšanas komisija: 2.4% + 2 EUR
