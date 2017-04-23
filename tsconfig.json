@@ -4,8 +4,9 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "removeComments": true,
+    "module": "system",
     "experimentalDecorators": true,
-    "outDir": "dist",
+    "outFile": "dist/bundle.js",
     "rootDirs": [
       "./src"
     ],
