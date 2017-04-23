@@ -6,7 +6,7 @@ export class Customer {
   }
 
   public maxMonthlyInvestment(): number {
-    return this.grosMonthlySalary / 10;
+    return this.grosMonthlySalary / 100;
   }
 
   public maxYearlyInvestment(): number {

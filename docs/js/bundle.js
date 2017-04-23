@@ -168,7 +168,7 @@ System.register("classes/customer", [], function (exports_4, context_4) {
                     this.grosMonthlySalary = grosMonthlySalary;
                 }
                 maxMonthlyInvestment() {
-                    return this.grosMonthlySalary / 10;
+                    return this.grosMonthlySalary / 100;
                 }
                 maxYearlyInvestment() {
                     return this.maxMonthlyInvestment() * 12;
@@ -367,7 +367,7 @@ System.register("index", ["classes/customer", "engine"], function (exports_7, co
             }
         ],
         execute: function () {
-            grossSalary = 200000;
+            grossSalary = 2000000;
             engine = new engine_1.Engine(new customer_1.Customer(grossSalary));
             engine.run();
         }
