@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --outDir dist",
+    "build": "tsc && cp -r dist/* docs/js/",
     "lint": "tslint --project tsconfig.json --type-check --format stylish",
     "clean": "rimraf dist",
     "prebuild": "npm run clean"
@@ -15,5 +15,6 @@
     "rimraf": "^2.6.1",
     "tslint": "^5.1.0",
     "typescript": "^2.2.2"
-  }
+  },
+  "dependencies": {}
 }

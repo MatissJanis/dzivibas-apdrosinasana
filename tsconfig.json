@@ -4,11 +4,10 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "removeComments": true,
-    "sourceMap": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "outDir": "out",
+    "outDir": "dist",
     "rootDirs": [
       "./src"
     ],
