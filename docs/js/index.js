@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const customer_1 = require("./classes/customer");
-const engine_1 = require("./engine");
+import { Customer } from './classes/customer';
+import { Engine } from './engine';
 const grossSalary = 200000;
-const engine = new engine_1.Engine(new customer_1.Customer(grossSalary));
+const engine = new Engine(new Customer(grossSalary));
 engine.run();

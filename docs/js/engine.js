@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const offerings_1 = require("./offerings");
-const strategy_1 = require("./classes/strategy");
-class Engine {
+import { offerings } from './offerings';
+import { InvestBigAtPeriodEndStrategy, InvestBigAtPeriodStartStrategy, InvestBigAtYearEndStrategy, InvestBigAtYearStartStrategy, InvestEvenlyStrategy, InvestRegularlyAndBigAtYearEndStrategy, } from './classes/strategy';
+export class Engine {
     constructor(customer) {
         this.customer = customer;
     }
@@ -12,15 +10,15 @@ class Engine {
         console.log('Information below:');
         console.log('[balance at end of 5 year period]: [strategy name]');
         console.log('-------------');
-        for (let i = offerings_1.offerings.length - 1; i >= 0; i--) {
-            const offering = offerings_1.offerings[i];
+        for (let i = offerings.length - 1; i >= 0; i--) {
+            const offering = offerings[i];
             const strategies = [
-                new strategy_1.InvestEvenlyStrategy(this.customer, offering),
-                new strategy_1.InvestRegularlyAndBigAtYearEndStrategy(this.customer, offering),
-                new strategy_1.InvestBigAtYearEndStrategy(this.customer, offering),
-                new strategy_1.InvestBigAtYearStartStrategy(this.customer, offering),
-                new strategy_1.InvestBigAtPeriodEndStrategy(this.customer, offering),
-                new strategy_1.InvestBigAtPeriodStartStrategy(this.customer, offering),
+                new InvestEvenlyStrategy(this.customer, offering),
+                new InvestRegularlyAndBigAtYearEndStrategy(this.customer, offering),
+                new InvestBigAtYearEndStrategy(this.customer, offering),
+                new InvestBigAtYearStartStrategy(this.customer, offering),
+                new InvestBigAtPeriodEndStrategy(this.customer, offering),
+                new InvestBigAtPeriodStartStrategy(this.customer, offering),
             ];
             console.log(offering.name);
             for (let j = strategies.length - 1; j >= 0; j--) {
@@ -32,4 +30,3 @@ class Engine {
         }
     }
 }
-exports.Engine = Engine;

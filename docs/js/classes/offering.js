@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const commission_1 = require("./commission");
-class Offering {
+import { InvestmentCommission, MonthlyCommission, } from './commission';
+export class Offering {
     constructor(name, options, comissions) {
         this.name = name;
         this.options = options;
@@ -9,10 +7,10 @@ class Offering {
     }
     getIncome(cycles = 1, monthlyPayment = this.options.minimumMonthlyPayment) {
         let savings = 0;
-        monthlyPayment -= this.calcTotalCommissionByType(monthlyPayment, commission_1.InvestmentCommission);
+        monthlyPayment -= this.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
         for (let i = 0; i < cycles; ++i) {
             savings += monthlyPayment;
-            savings -= this.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.calcTotalCommissionByType(savings, MonthlyCommission);
             savings += savings * this.options.interest / 100;
         }
         return savings;
@@ -27,4 +25,3 @@ class Offering {
         return total;
     }
 }
-exports.Offering = Offering;

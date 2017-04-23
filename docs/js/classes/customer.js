@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Customer {
+export class Customer {
     constructor(grosMonthlySalary) {
         this.grosMonthlySalary = grosMonthlySalary;
     }
@@ -11,4 +9,3 @@ class Customer {
         return this.maxMonthlyInvestment() * 12;
     }
 }
-exports.Customer = Customer;

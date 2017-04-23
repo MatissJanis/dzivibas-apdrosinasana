@@ -1,25 +1,23 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const commission_1 = require("./commission");
+import { ContractCommission, InvestmentCommission, MonthlyCommission, } from './commission';
 class Strategy {
     constructor(customer, offering) {
         this.customer = customer;
         this.offering = offering;
     }
     getContractCommission() {
-        return this.offering.calcTotalCommissionByType(0, commission_1.ContractCommission);
+        return this.offering.calcTotalCommissionByType(0, ContractCommission);
     }
 }
-class InvestRegularlyAndBigAtYearEndStrategy extends Strategy {
+export class InvestRegularlyAndBigAtYearEndStrategy extends Strategy {
     getIncome() {
         let monthlyPayment = this.offering.options.minimumMonthlyPayment;
         let bigPayment = this.customer.maxYearlyInvestment() - (monthlyPayment * 11);
         let savings = -this.getContractCommission();
-        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, commission_1.InvestmentCommission);
-        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, commission_1.InvestmentCommission);
+        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
+        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, InvestmentCommission);
         for (let i = 1; i <= 60; ++i) {
             savings += (i % 12 === 0 ? bigPayment : monthlyPayment);
-            savings -= this.offering.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.offering.calcTotalCommissionByType(savings, MonthlyCommission);
             if (i % 12 === 0) {
                 savings += savings * this.offering.options.interest / 100;
             }
@@ -27,15 +25,14 @@ class InvestRegularlyAndBigAtYearEndStrategy extends Strategy {
         return savings;
     }
 }
-exports.InvestRegularlyAndBigAtYearEndStrategy = InvestRegularlyAndBigAtYearEndStrategy;
-class InvestBigAtYearEndStrategy extends Strategy {
+export class InvestBigAtYearEndStrategy extends Strategy {
     getIncome() {
         let bigPayment = this.customer.maxYearlyInvestment();
         let savings = -this.getContractCommission();
-        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, commission_1.InvestmentCommission);
+        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, InvestmentCommission);
         for (let i = 12; i <= 60; ++i) {
             savings += (i % 12 === 0 ? bigPayment : 0);
-            savings -= this.offering.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.offering.calcTotalCommissionByType(savings, MonthlyCommission);
             if (i % 12 === 0) {
                 savings += savings * this.offering.options.interest / 100;
             }
@@ -43,17 +40,16 @@ class InvestBigAtYearEndStrategy extends Strategy {
         return savings;
     }
 }
-exports.InvestBigAtYearEndStrategy = InvestBigAtYearEndStrategy;
-class InvestBigAtYearStartStrategy extends Strategy {
+export class InvestBigAtYearStartStrategy extends Strategy {
     getIncome() {
         let monthlyPayment = this.offering.options.minimumMonthlyPayment;
         let bigPayment = this.customer.maxYearlyInvestment() - (monthlyPayment * 11);
         let savings = -this.getContractCommission();
-        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, commission_1.InvestmentCommission);
-        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, commission_1.InvestmentCommission);
+        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
+        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, InvestmentCommission);
         for (let i = 0; i < 60; ++i) {
             savings += (i % 12 === 0 ? bigPayment : monthlyPayment);
-            savings -= this.offering.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.offering.calcTotalCommissionByType(savings, MonthlyCommission);
             if ((i + 1) % 12 === 0) {
                 savings += savings * this.offering.options.interest / 100;
             }
@@ -61,15 +57,14 @@ class InvestBigAtYearStartStrategy extends Strategy {
         return savings;
     }
 }
-exports.InvestBigAtYearStartStrategy = InvestBigAtYearStartStrategy;
-class InvestEvenlyStrategy extends Strategy {
+export class InvestEvenlyStrategy extends Strategy {
     getIncome() {
         let monthlyPayment = this.customer.maxMonthlyInvestment();
         let savings = -this.getContractCommission();
-        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, commission_1.InvestmentCommission);
+        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
         for (let i = 1; i <= 60; ++i) {
             savings += monthlyPayment;
-            savings -= this.offering.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.offering.calcTotalCommissionByType(savings, MonthlyCommission);
             if (i % 12 === 0) {
                 savings += savings * this.offering.options.interest / 100;
             }
@@ -77,17 +72,16 @@ class InvestEvenlyStrategy extends Strategy {
         return savings;
     }
 }
-exports.InvestEvenlyStrategy = InvestEvenlyStrategy;
-class InvestBigAtPeriodEndStrategy extends Strategy {
+export class InvestBigAtPeriodEndStrategy extends Strategy {
     getIncome() {
         let monthlyPayment = this.offering.options.minimumMonthlyPayment;
         let bigPayment = this.customer.maxYearlyInvestment() * 5 - (monthlyPayment * 59);
         let savings = -this.getContractCommission();
-        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, commission_1.InvestmentCommission);
-        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, commission_1.InvestmentCommission);
+        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
+        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, InvestmentCommission);
         for (let i = 1; i <= 60; ++i) {
             savings += (i === 60 ? bigPayment : monthlyPayment);
-            savings -= this.offering.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.offering.calcTotalCommissionByType(savings, MonthlyCommission);
             if (i % 12 === 0) {
                 savings += savings * this.offering.options.interest / 100;
             }
@@ -95,17 +89,16 @@ class InvestBigAtPeriodEndStrategy extends Strategy {
         return savings;
     }
 }
-exports.InvestBigAtPeriodEndStrategy = InvestBigAtPeriodEndStrategy;
-class InvestBigAtPeriodStartStrategy extends Strategy {
+export class InvestBigAtPeriodStartStrategy extends Strategy {
     getIncome() {
         let monthlyPayment = this.offering.options.minimumMonthlyPayment;
         let bigPayment = this.customer.maxYearlyInvestment() * 5 - (monthlyPayment * 59);
         let savings = -this.getContractCommission();
-        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, commission_1.InvestmentCommission);
-        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, commission_1.InvestmentCommission);
+        monthlyPayment -= this.offering.calcTotalCommissionByType(monthlyPayment, InvestmentCommission);
+        bigPayment -= this.offering.calcTotalCommissionByType(bigPayment, InvestmentCommission);
         for (let i = 1; i <= 60; ++i) {
             savings += (i === 1 ? bigPayment : monthlyPayment);
-            savings -= this.offering.calcTotalCommissionByType(savings, commission_1.MonthlyCommission);
+            savings -= this.offering.calcTotalCommissionByType(savings, MonthlyCommission);
             if (i % 12 === 0) {
                 savings += savings * this.offering.options.interest / 100;
             }
@@ -113,4 +106,3 @@ class InvestBigAtPeriodStartStrategy extends Strategy {
         return savings;
     }
 }
-exports.InvestBigAtPeriodStartStrategy = InvestBigAtPeriodStartStrategy;

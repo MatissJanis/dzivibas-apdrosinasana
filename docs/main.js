@@ -1,12 +1,14 @@
+import { Customer } from './js/classes/customer';
+import { Engine } from './js/engine';
+
 $(function() {
   $('form').on('submit', function (event) {
     event.preventDefault();
 
     var grossSalary = $('input[name="salary"]').val();
 
-    const customer_1 = require("./js/classes/customer");
-    const engine_1 = require("./js/engine");
-    const engine = new engine_1.Engine(new customer_1.Customer(grossSalary));
+    const grossSalary = 200000;
+    const engine = new Engine(new Customer(grossSalary));
     engine.run();
   });
 }());
